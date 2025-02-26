@@ -42,7 +42,7 @@ pipeline {
                 dir('my_python_project') {
                     sh 'python3 -m venv env'
                     sh '. env/bin/activate'
-                    sh 'pip install build'
+                    sh 'pip install --break-system-packages build'
                     sh 'python3 -m build --wheel'
                 }
             }
