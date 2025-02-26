@@ -10,7 +10,7 @@ pipeline {
             steps {
                 // For local Git repo (adjust path if needed)
                 dir('/home/user/my_python_project') {
-                    git branch: 'main', url: 'file:///home/user/my_python_project'
+                    git branch: 'main', url: 'https://github.com/rhearobinson19/jenkins-project.git'
                 }
             }
         }
