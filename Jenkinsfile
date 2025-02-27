@@ -46,6 +46,7 @@ pipeline {
                     sh 'pip install --break-system-packages build'
                     sh 'python3 -m build --wheel'
                 }
+
             }
         }
        
@@ -60,9 +61,10 @@ pipeline {
        
         stage('Deploy') {
             steps {
-                sh 'docker stop my-python-container || true'
-                sh 'docker rm my-python-container || true'
-                sh 'docker run -d --name my-python-container my-python-app:latest'
+                sh 'docker stop jenkins-project || true'
+                sh 'docker rm jenkins-project || true'
+                sh 'docker run -d --name jenkins-project my-python-app:latest'
+                sh 'docker logs -f jenkins-project'
             }
         }
     }
