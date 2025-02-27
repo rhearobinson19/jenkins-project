@@ -43,7 +43,7 @@ pipeline {
                     sh 'python3 -m venv env'
                     sh 'chmod +x env/bin/activate'
                     sh '. env/bin/activate'
-                    sh 'pip install build'
+                    sh 'pip install --break-system-packages build'
                     sh 'python3 -m build --wheel'
                 }
             }
